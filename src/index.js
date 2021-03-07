@@ -1,5 +1,5 @@
-import add from './add'
-import { mul } from './mul'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-add(10, 20)
-mul(10, 20)
+ReactDOM.render(<div>Hello world.</div>, document.getElementById('app'))
+//div는 html이아니라 jsx문법
