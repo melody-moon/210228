@@ -6,6 +6,7 @@ module.exports = {
   output: {
     filename: 'bundle.[hash].js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
   },
   module: {
     rules: [
@@ -30,5 +31,6 @@ module.exports = {
     inline: true,
     hot: true,
     open: true,
+    historyApiFallback: true,
   },
 }
