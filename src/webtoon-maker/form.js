@@ -1,12 +1,14 @@
 import React, { useState } from 'react'
 
-function Form() {
-  const [formValues, setFormValues] = useState({
-    title: '',
-    author: '',
-    description: '',
-    imageUrl: '',
-  })
+const DEFAULT_VALUES = {
+  title: '',
+  author: '',
+  description: '',
+  imageUrl: '',
+}
+
+function Form({ onAddWebtoon }) {
+  const [formValues, setFormValues] = useState(DEFAULT_VALUES)
 
   const handleFormValues = (e) => {
     // console.log(e.target.name)
@@ -19,7 +21,9 @@ function Form() {
     })
   }
   const handleSubmit = () => {
-    console.log(formValues)
+    onAddWebtoon(formValues)
+
+    setFormValues(DEFAULT_VALUES)
   }
 
   return (
