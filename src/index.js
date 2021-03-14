@@ -1,4 +1,7 @@
-var aa = 20
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-console.log(aa)
-gg
+import App from './app'
+
+ReactDOM.render(<App />, document.getElementById('app'))
+//div는 html이아니라 jsx문법
