@@ -8,6 +8,8 @@ import WebtoonPage from './pages/webtoon'
 
 import ResetCSS from './components/reset-css'
 
+import { UserContextProvider } from './contexts/user-context'
+
 const Container = styled.div`
   max-width: 720px;
   margin: 0 auto;
@@ -18,16 +20,18 @@ function App() {
   return (
     <Container>
       <ResetCSS />
-      <BrowserRouter>
-        <Switch>
-          <Route exact path={ROUTES.HOME}>
-            <HomePage />
-          </Route>
-          <Route path={ROUTES.WEBTOON}>
-            <WebtoonPage />
-          </Route>
-        </Switch>
-      </BrowserRouter>
+      <UserContextProvider>
+        <BrowserRouter>
+          <Switch>
+            <Route exact path={ROUTES.HOME}>
+              <HomePage />
+            </Route>
+            <Route path={ROUTES.WEBTOON}>
+              <WebtoonPage />
+            </Route>
+          </Switch>
+        </BrowserRouter>
+      </UserContextProvider>
     </Container>
   )
 }

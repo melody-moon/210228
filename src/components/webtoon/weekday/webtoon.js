@@ -3,6 +3,8 @@ import styled from 'styled-components'
 
 import { Link } from 'react-router-dom'
 
+import { ROUTES } from '../../../constants'
+
 const Wrapper = styled.div`
   height: 111px;
   padding: 0px 16px;
@@ -50,11 +52,11 @@ const Author = styled.div`
 `
 
 function Webtoon({ webtoon }) {
-  const { imageUrl, title, author } = webtoon
+  const { id, imageUrl, title, author } = webtoon
 
   return (
     <Wrapper>
-      <Container>
+      <Container to={`${ROUTES.WEBTOON.HOME}/${id}`}>
         <Image src={imageUrl} />
         <Info>
           <Title>{title}</Title>
